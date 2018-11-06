@@ -1,32 +1,254 @@
-@import url('some google sans-serif font');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 *::after,
-*::before{
+*::before {
     box-sizing: inherit;
 }
-html{
+
+html {
     font-size: 20px;
     line-height: 1.5;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
-main{
+
+main {
     width: 90%;
     margin: 0 auto;
     border: 1px solid #aaa;
 }
 
-input#min.price::after{
-    content: "$" attr(data-price);
+input#min.price::after {
+    content: "$"attr(data-price);
     display: block;
     margin-top: -1.5rem;
 }
-input.price#max::after{
-    content: "$" attr(data-price);
+
+input.price#max::after {
+    content: "$"attr(data-price);
     display: block;
     margin-top: -1.5rem;
+}
+
+select,
+input {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    padding: 0.4rem;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+header {
+    background-image: url("/img/bg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+}
+
+/*************************************************
+            MEDIA QUERIES for layout
+*************************************************/
+@media (max-width: 599px) {
+
+    header > h1 {
+        color: hsl(0, 55%, 50%);
+        font-size: 3rem;
+        text-shadow: 2px 2px hsl(0, 0%, 0%);
+        display: flex;
+        flex-direction: row;
+    }
+
+    h1 > img {
+        width: 20%;
+        height: 20%;
+        margin: 10px;
+    }
+
+    .form-box {
+        clear: both;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        margin: 5px;
+        font-size: 1rem;
+        color: hsl(1, 0%, 30%);
+    }
+
+    .search-btn {
+        float: left;
+        background-color: hsl(0, 55%, 50%);
+        font-size: 1rem;
+        color: hsl(10, 10%, 100%);
+        border: 8px;
+        border-radius: 8px;
+        width: 30%;
+        height: 30px;
+    }
+}
+
+@media (min-width: 600px) and (max-width:999px) {
+
+    header > h1 {
+        color: hsl(0, 55%, 50%);
+        font-size: 3rem;
+        text-shadow: 2px 2px hsl(0, 0%, 0%);
+        display: flex;
+        flex-direction: row;
+    }
+
+    h1 > img {
+        width: 20%;
+        height: 20%;
+        margin: 10px;
+    }
+
+    form {
+        margin: 5px;
+        display: grid;
+        grid-template-areas:
+            "w w"
+            "i o"
+            "n x"
+            "d b";
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .form-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .place {
+        grid-area: w;
+    }
+
+    .check-in {
+        grid-area: i;
+    }
+
+    .check-out {
+        grid-area: o;
+    }
+
+    .min-price {
+        grid-area: n;
+    }
+
+    .max-price {
+        grid-area: x;
+    }
+
+    .dogs {
+        grid-area: d;
+    }
+
+    .search {
+        grid-area: b;
+    }
+
+    .search-btn {
+        width: 30%;
+        height: 30px;
+        background-color: hsl(0, 55%, 50%);
+        font-size: 1rem;
+        color: hsl(10, 10%, 100%);
+        border: 8px;
+        border-radius: 8px;
+        margin: 30px;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    main {
+        margin: 5px;
+        display: grid;
+        grid-template-areas:
+            "i f";
+        grid-template-columns: 1fr 1fr;
+    }
+
+    header {
+        grid-area: i;
+        height: 350px;
+
+    }
+
+    header > h1 {
+        color: hsl(0, 55%, 50%);
+        font-size: 3rem;
+        text-shadow: 2px 2px hsl(0, 0%, 0%);
+        display: flex;
+        flex-direction: row;
+    }
+
+    h1 > img {
+        width: 180px;
+        height: 180px;
+        margin: 10px;
+    }
+
+    form {
+        grid-area: f;
+        margin: 5px;
+        display: grid;
+        grid-template-areas:
+            "w w"
+            "i o"
+            "n x"
+            "d b";
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .form-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .place {
+        grid-area: w;
+    }
+
+    .check-in {
+        grid-area: i;
+    }
+
+    .check-out {
+        grid-area: o;
+    }
+
+    .min-price {
+        grid-area: n;
+    }
+
+    .max-price {
+        grid-area: x;
+    }
+
+    .dogs {
+        grid-area: d;
+    }
+
+    .search {
+        grid-area: b;
+    }
+
+    .search-btn {
+        width: 30%;
+        height: 30px;
+        background-color: hsl(0, 55%, 50%);
+        font-size: 1rem;
+        color: hsl(10, 10%, 100%);
+        border: 8px;
+        border-radius: 8px;
+        margin: 30px;
+    }
 }
