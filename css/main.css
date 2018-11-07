@@ -44,7 +44,7 @@ input {
 }
 
 header {
-    background-image: url("/img/bg.jpeg");
+    background-image: url("../img/bg.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 200px;
